@@ -5,26 +5,26 @@
   padding: 20px;
   background: #e5ddd5;
   min-height: 100vh;
+  min-width: 97vw;
 }
 
 .chat-app {
   background: white;
-  width: 350px;
-  height: 600px;
+  width: 50%;
+  height: auto;
   border-radius: 10px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .app-header {
-  background: #0088cc;
-  color: white;
-  padding: 10px;
+  background: #119f04;
+  color: #FFFFFF;
+  padding: 15px;
+  font-size: 20px;
   text-align: center;
-  font-weight: bold;
-  font-size: 18px;
+  border-radius: 10px;
 }
 
 .main-content {
@@ -33,21 +33,29 @@
 }
 
 .sidebar {
+  padding: 10px;
   width: 30%;
   background: #f0f0f0;
   border-right: 1px solid #ddd;
-  overflow-y: auto;
+  color: black;
 }
 
 .user {
-  display: flex;
-  align-items: center;
+  color: black;
+  font-weight: bold;
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px; 
 }
 
 .user:hover {
-  background: #d9d9d9;
+  background: #30f16a;
+}
+.user.active{
+  background: #7ae772;
 }
 
 .avatar {
@@ -64,13 +72,15 @@
   display: flex;
   flex-direction: column;
   background: #ece5dd;
-  position: relative;
+  overflow-y: auto;
 }
 
 .chat-header {
   background: #075e54;
   color: white;
   padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .chat-username {
@@ -95,12 +105,13 @@
 }
 
 .sent {
-  background: #dcf8c6;
+  background: #F2F7FB;
+  color: black;
   align-self: flex-end;
 }
 
 .received {
-  background: #ffffff;
+  background: #208D7F;
   align-self: flex-start;
 }
 
@@ -121,10 +132,18 @@
 }
 
 .chat-footer button {
-  background: #0088cc;
+  background: #05ef4b;
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
+}
+
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
 }

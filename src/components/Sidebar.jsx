@@ -1,18 +1,19 @@
 import React from 'react';
 
 function Sidebar({ currentUserId, users }) {
-  const filteredUsers = users.filter(user => user.id !== currentUserId);
+    const filteredUsers = users.filter(user => user.id !== `${currentUserId}`);
 
-  return (
-    <div className="sidebar">
-      {filteredUsers.map(user => (
-        <div key={user.id} className="user">
-          <span className="avatar">{user.avatar}</span>
-          <span className="name">{user.name}</span>
+    return (
+        <div className="sidebar">
+            <h3 className=''>Chats</h3>
+            {filteredUsers?.map(user => (
+                <div key={user.id} className='user'>
+                    <img src={user.avatar} alt="avatar" className="avatar-img" />
+                    <span className="name">{user.name}</span>
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
-  );
+    );
 }
 
 export default Sidebar;
