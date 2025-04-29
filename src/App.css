@@ -4,57 +4,70 @@
   gap: 20px;
   padding: 20px;
   background: #e5ddd5;
-  min-height: 100vh;
-  min-width: 97vw;
+  height: 100vh;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .chat-app {
   background: white;
-  width: 50%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .app-header {
   background: #119f04;
   color: #FFFFFF;
   padding: 15px;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 16px;
   text-align: center;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .main-content {
   display: flex;
   flex: 1;
+  overflow: hidden;
 }
 
 .sidebar {
-  padding: 10px;
+  padding: 2px;
   width: 30%;
   background: #f0f0f0;
   border-right: 1px solid #ddd;
   color: black;
+  overflow-y: auto;
+}
+
+.chats {
+  margin: 10px 10px !important;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .user {
   color: black;
-  font-weight: bold;
-  padding: 10px;
+  font-weight: normal;
+  padding: 5px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  border-radius: 5px; 
+  gap: 5px;
+  border-radius: 5px;
 }
 
 .user:hover {
   background: #30f16a;
 }
-.user.active{
+
+.user.active {
   background: #7ae772;
 }
 
@@ -64,7 +77,8 @@
 }
 
 .name {
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .chat-window {
@@ -72,19 +86,20 @@
   display: flex;
   flex-direction: column;
   background: #ece5dd;
-  overflow-y: auto;
+  height: 100%;
 }
 
 .chat-header {
   background: #075e54;
   color: white;
+  font-size: 14px;
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
 .chat-username {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .chat-body {
@@ -93,6 +108,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  background: #ece5dd;
 }
 
 .message {
@@ -113,6 +129,7 @@
 .received {
   background: #208D7F;
   align-self: flex-start;
+  color: white;
 }
 
 .chat-footer {
@@ -146,4 +163,11 @@
   border-radius: 50%;
   margin-right: 10px;
   object-fit: cover;
+}
+
+
+@media (max-width:840px) {
+  .app-container{
+    flex-direction: column;
+  }
 }

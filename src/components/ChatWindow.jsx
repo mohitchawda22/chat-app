@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function ChatWindow({ username, currentUserId, message, setMessage }) {
     const [input, setInput] = useState('')
+
+    const messageScroll = useRef(null)
+
+    useEffect(() => {
+        messageScroll.current?.scrollIntoView({ behavior: "smooth" })
+    })
 
     const handleSend = () => {
         if (input.trim() === '') return;
@@ -33,6 +39,7 @@ function ChatWindow({ username, currentUserId, message, setMessage }) {
                         <div className='timestamp'>{msg.timestamp}</div>
                     </div>
                 ))}
+                <div ref={messageScroll}></div>
             </div>
 
             <div className="chat-footer">
